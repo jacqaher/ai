@@ -89,19 +89,6 @@
   .diff-point strong { display: block; font-size: 1rem; margin-bottom: 0.4rem; }
   .diff-point span { font-size: 0.88rem; opacity: 0.85; line-height: 1.6; }
 
-  .reviews { padding: 4.5rem 3rem; background: var(--warm); }
-  .reviews-inner { max-width: 1100px; margin: 0 auto; }
-  .reviews-header { margin-bottom: 2rem; }
-  .reviews-header h2 { font-family: 'Fraunces', serif; font-size: clamp(1.9rem, 3vw, 2.7rem); font-weight: 700; letter-spacing: -0.02em; margin-bottom: 0.5rem; }
-  .reviews-header p { color: var(--muted); font-size: 0.95rem; }
-  .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-  .review-card { background: white; border: 1px solid var(--border); border-radius: 4px; padding: 2rem; }
-  .review-stars { color: var(--accent); font-size: 0.9rem; margin-bottom: 1rem; letter-spacing: 2px; }
-  .review-card blockquote { font-family: 'Fraunces', serif; font-style: italic; font-size: 1rem; line-height: 1.7; color: var(--ink); margin-bottom: 1.5rem; font-weight: 300; }
-  .reviewer { display: flex; align-items: center; gap: 0.8rem; }
-  .reviewer-avatar { width: 40px; height: 40px; border-radius: 50%; background: #f0f0f0; border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 600; color: var(--accent); flex-shrink: 0; }
-  .reviewer-name { font-weight: 600; font-size: 0.88rem; display: block; margin-bottom: 0.1rem; }
-  .reviewer-role { font-size: 0.78rem; color: var(--muted); }
 
   .process { padding: 4.5rem 3rem; }
   .process-inner { max-width: 900px; margin: 0 auto; }
@@ -141,8 +128,7 @@
     .services-grid { grid-template-columns: 1fr; }
     .diff-inner { grid-template-columns: 1fr; gap: 2rem; }
     .diff-points { grid-template-columns: 1fr; }
-    .reviews-grid { grid-template-columns: 1fr; }
-    .explainer, .problem, .services, .diff, .reviews, .process, .cta-section { padding: 4rem 1.5rem; }
+      .explainer, .problem, .services, .diff, .process, .cta-section { padding: 4rem 1.5rem; }
     footer { flex-direction: column; gap: 0.5rem; text-align: center; }
     .jump-bar { padding: 0.7rem 1rem !important; top: 58px !important; }
     .about-sec, .pricing-sec { padding: 2.5rem 1.5rem !important; }
@@ -153,8 +139,7 @@
     .pricing-sec div[style*="grid-template-columns: 1fr auto"] { grid-template-columns: 1fr !important; padding: 1.5rem !important; }
     .pricing-sec div[style*="grid-template-columns: 1fr auto"] > div:last-child { text-align: left !important; }
     .pricing-sec div[style*="grid-template-columns: auto 1fr"] { padding: 1.5rem !important; }
-    .reviews-grid { grid-template-columns: 1fr !important; }
-    .step { gap: 1rem; }
+      .step { gap: 1rem; }
     .step-number { width: 44px; height: 44px; font-size: 1rem; }
     .steps::before { left: 22px; }
   }
@@ -184,7 +169,6 @@
       <p class="hero-lead">AI tools are already sitting inside your Microsoft account — most teams just don't know how to use them. I work with teams to unlock what's already there, in plain language, with no tech background required.</p>
       <div class="hero-actions">
         <a href="#services" class="btn-primary">See what I offer</a>
-        <a href="#reviews" class="btn-secondary">Read what others say</a>
       </div>
     </div>
     <div class="hero-card">
@@ -216,7 +200,6 @@
     <a href="#about" style="font-size: 0.82rem; color: white; text-decoration: none; padding: 0.35rem 0.9rem; border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; transition: background 0.2s; white-space: nowrap;" onmouseover="this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.background='transparent'">About Jackie</a>
     <a href="#services" style="font-size: 0.82rem; color: white; text-decoration: none; padding: 0.35rem 0.9rem; border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; transition: background 0.2s; white-space: nowrap;" onmouseover="this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.background='transparent'">Services</a>
     <a href="#different" style="font-size: 0.82rem; color: white; text-decoration: none; padding: 0.35rem 0.9rem; border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; transition: background 0.2s; white-space: nowrap;" onmouseover="this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.background='transparent'">Where I'm Different</a>
-    <a href="#reviews" style="font-size: 0.82rem; color: white; text-decoration: none; padding: 0.35rem 0.9rem; border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; transition: background 0.2s; white-space: nowrap;" onmouseover="this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.background='transparent'">Reviews</a>
     <a href="#pricing" style="font-size: 0.82rem; color: white; text-decoration: none; padding: 0.35rem 0.9rem; border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; transition: background 0.2s; white-space: nowrap;" onmouseover="this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.background='transparent'">Pricing</a>
     <a href="#contact" style="font-size: 0.82rem; color: white; text-decoration: none; padding: 0.35rem 0.9rem; border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; transition: background 0.2s; white-space: nowrap;" onmouseover="this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.background='transparent'">Get in Touch</a>
   </div>
@@ -347,38 +330,6 @@
           </tr>
         </tbody>
       </table>
-    </div>
-  </div>
-</section>
-
-<section class="reviews" id="reviews">
-  <div class="reviews-inner">
-    <div class="reviews-header">
-      <p class="section-label">In their own words</p>
-      <h2>What clients say</h2>
-      <p>From complete beginners to whole-team rollouts.</p>
-    </div>
-    <div class="reviews-grid" style="grid-template-columns: repeat(2, 1fr);">
-      <div class="review-card">
-        <div class="review-stars">★★★★★</div>
-        <blockquote>"I honestly didn't think AI was for someone like me. I've been working in the same role for over 20 years and I'm not a tech person at all. But within one session I was using Copilot to help me write reports in half the time. I actually look forward to coming to work more now."</blockquote>
-        <div class="reviewer"><div class="reviewer-avatar">SL</div><div><span class="reviewer-name">Sandra L.</span><span class="reviewer-role">Supervisor</span></div></div>
-      </div>
-      <div class="review-card">
-        <div class="review-stars">★★★★★</div>
-        <blockquote>"We'd planned eight days of team planning sessions across two weeks, then had to cut it to four at the last minute. Jackie sat with me, figured out what actually mattered most, built the prompts, ran some sessions herself, and set me up to run the others. We got everything done we'd originally planned for eight days — in four. I still don't fully understand how."</blockquote>
-        <div class="reviewer"><div class="reviewer-avatar">TR</div><div><span class="reviewer-name">Tanya R.</span><span class="reviewer-role">Team Leader</span></div></div>
-      </div>
-      <div class="review-card">
-        <div class="review-stars">★★★★★</div>
-        <blockquote>"What I appreciated most was that Jackie didn't just focus on AI. She looked at everything I was doing and gave me honest, practical suggestions — some using Copilot, some just better habits. I've saved six hours a week and I'm not exaggerating."</blockquote>
-        <div class="reviewer"><div class="reviewer-avatar">JP</div><div><span class="reviewer-name">Jordan P.</span><span class="reviewer-role">Coordinator</span></div></div>
-      </div>
-      <div class="review-card">
-        <div class="review-stars">★★★★★</div>
-        <blockquote>"I was nervous about AI — I'd heard a lot about it being unreliable or even risky to use at work. Jackie addressed all of that honestly and showed us how to use it responsibly. Our whole team is now using Copilot confidently, and we didn't need to buy a single new licence."</blockquote>
-        <div class="reviewer"><div class="reviewer-avatar">DB</div><div><span class="reviewer-name">David B.</span><span class="reviewer-role">Operations Manager</span></div></div>
-      </div>
     </div>
   </div>
 </section>
