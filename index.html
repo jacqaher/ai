@@ -52,12 +52,16 @@
   .explainer { background: var(--ink); color: var(--paper); padding: 4.5rem 3rem; }
   .explainer-inner { max-width: 780px; margin: 0 auto; text-align: center; }
   .explainer h2 { font-family: 'Fraunces', serif; font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 400; font-style: italic; margin-bottom: 1.5rem; line-height: 1.25; }
-  .explainer p { color: #c8c0b4; font-size: 1.05rem; margin-bottom: 1.2rem; line-height: 1.8; }
-  .explainer-highlight { display: inline-block; background: var(--accent); color: white; padding: 0.2rem 0.7rem; border-radius: 2px; font-weight: 600; }
-  .no-jargon { margin-top: 3rem; padding: 2rem 2.5rem; background: rgba(255,255,255,0.06); border-left: 3px solid var(--accent); border-radius: 2px; text-align: left; }
-  .no-jargon p { font-size: 1rem; color: #d8d0c4; margin: 0; }
-  .no-jargon strong { color: white; }
 
+  .explainer-intro { color: #c8d3d9; font-size: 1.05rem; margin-bottom: 2rem; }
+  .copilot-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; text-align: left; }
+  .copilot-box { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.15); border-radius: 4px; padding: 1.8rem 1.8rem; }
+  .copilot-box.featured { background: rgba(255,255,255,0.12); border-color: var(--accent); }
+  .copilot-tag { display: inline-block; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; background: rgba(255,255,255,0.15); color: white; padding: 0.2rem 0.6rem; border-radius: 2px; }
+  .copilot-box.featured .copilot-tag { background: var(--accent); color: var(--ink); }
+  .copilot-box h3 { font-family: 'Fraunces', serif; font-size: 1.35rem; font-weight: 700; margin: 0.9rem 0 0.5rem; color: white; }
+  .copilot-box p { color: #c8d3d9; font-size: 0.95rem; line-height: 1.7; }
+  .explainer-close { margin-top: 2rem; color: white; font-size: 1.05rem; font-weight: 600; }
   .problem { padding: 4.5rem 3rem; background: var(--warm); }
   .problem-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
   .section-label { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; }
@@ -154,6 +158,7 @@
     .about-grid { grid-template-columns: 1fr !important; gap: 1.5rem !important; justify-items: start; }
     .site-footer { padding: 2.5rem 1.5rem !important; }
     .more-cards { grid-template-columns: 1fr; }
+    .copilot-compare { grid-template-columns: 1fr; }
     .options-grid { grid-template-columns: 1fr; }
     .not-sure { padding: 1.5rem; }
     .rate-grid, .info-grid { grid-template-columns: 1fr; }
@@ -242,12 +247,20 @@
 <section class="explainer" id="copilot">
   <div class="explainer-inner">
     <h2>"What even is Copilot Chat?"</h2>
-    <p>Copilot Chat is Microsoft's free AI assistant. Think of it as a knowledgeable colleague you can type a request to — it helps you draft documents, summarise information, create plans, research topics, prepare for meetings, and much more.</p>
-    <p>If your organisation uses Microsoft 365, your team can most likely use it right now, at no extra cost — that's the <span class="explainer-highlight">free version of Copilot</span>. Most people just haven't been shown how to make it work for their actual job.</p>
-    <div class="no-jargon">
-      <p style="margin-bottom: 1rem;"><strong>There's also a paid, premium version of Copilot.</strong> It's a capable product, but it's a cost for every person — so many organisations can't justify it for everyone. <strong>My work is built entirely around the free version,</strong> so your whole workforce can benefit, whatever your budget.</p>
-      <p><strong>No jargon. No tech background needed.</strong> My job is to make this immediately useful for your team — not to overwhelm you with buzzwords about artificial intelligence.</p>
+    <p class="explainer-intro">If your organisation has Microsoft 365, there are two versions of Copilot you might hear about.</p>
+    <div class="copilot-compare">
+      <div class="copilot-box featured">
+        <span class="copilot-tag">Free</span>
+        <h3>Copilot Chat</h3>
+        <p>Microsoft's AI assistant for drafting, summarising, planning and research. If you have Microsoft 365, your team most likely has access now — at no extra cost.</p>
+      </div>
+      <div class="copilot-box">
+        <span class="copilot-tag">Paid</span>
+        <h3>Copilot Premium</h3>
+        <p>A paid add-on that connects Copilot to your files and apps. It's a cost for every person, so many businesses can't licence everyone.</p>
+      </div>
     </div>
+    <p class="explainer-close">I build everything around the free one — so your whole team can benefit, whatever your budget.</p>
   </div>
 </section>
 
