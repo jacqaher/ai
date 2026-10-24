@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Workplace AI Coaching</title>
+<meta name="description" content="Upskill your workforce and set up practical AI tools and systems using free Copilot Chat — no premium licences, no six-figure builds. Workplace AI Coaching, Western Australia, available globally.">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -62,9 +63,12 @@
   .section-label { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; }
   .problem h2 { font-family: 'Fraunces', serif; font-size: clamp(1.8rem, 2.8vw, 2.5rem); font-weight: 700; line-height: 1.2; margin-bottom: 1.5rem; letter-spacing: -0.02em; }
   .problem p { color: #3a5260; margin-bottom: 1.1rem; line-height: 1.8; }
-  .pain-list { list-style: none; display: flex; flex-direction: column; gap: 1rem; }
-  .pain-list li { display: flex; gap: 1rem; align-items: flex-start; padding: 1.1rem 1.3rem; background: white; border-radius: 3px; border: 1px solid var(--border); font-size: 0.95rem; line-height: 1.5; }
-  .pain-list .x { color: var(--accent); font-weight: 700; font-size: 1.1rem; flex-shrink: 0; }
+  .tick-list { list-style: none; display: flex; flex-direction: column; gap: 0.9rem; }
+  .tick-list li { position: relative; padding-left: 2rem; font-size: 1rem; line-height: 1.6; color: #3a5260; }
+  .tick-list li::before { content: '✓'; position: absolute; left: 0; top: 0.05rem; width: 1.35rem; height: 1.35rem; border-radius: 50%; background: var(--accent); color: white; font-size: 0.78rem; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+  .tick-list.dot-list li::before { content: ''; width: 0.5rem; height: 0.5rem; left: 0.4rem; top: 0.55rem; background: var(--muted); }
+  .problem-points { gap: 1.3rem; }
+  .problem-points li { font-size: 1.05rem; line-height: 1.7; padding-left: 1.6rem; }
 
   .services { padding: 4.5rem 3rem; }
   .services-inner { max-width: 1100px; margin: 0 auto; }
@@ -81,13 +85,6 @@
   .service-card p { font-size: 0.9rem; color: var(--muted); line-height: 1.7; margin-bottom: 1rem; }
   .service-tag { display: inline-block; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--sage); background: #e8f0e6; padding: 0.2rem 0.6rem; border-radius: 2px; }
 
-  .diff { padding: 4rem 3rem; background: var(--accent); color: white; }
-  .diff-inner { max-width: 1100px; margin: 0 auto; }
-  .diff h2 { font-family: 'Fraunces', serif; font-size: clamp(1.8rem, 2.8vw, 2.5rem); font-weight: 700; line-height: 1.2; letter-spacing: -0.02em; }
-  .diff-points { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-  .diff-point { padding: 1.5rem; background: rgba(255,255,255,0.15); border-radius: 3px; }
-  .diff-point strong { display: block; font-size: 1rem; margin-bottom: 0.4rem; }
-  .diff-point span { font-size: 0.88rem; opacity: 0.85; line-height: 1.6; }
 
 
   .process { padding: 4.5rem 3rem; }
@@ -119,6 +116,30 @@
   .rate-card { grid-template-columns: 1fr !important; }
   .rate-card > div:last-child { text-align: left !important; }
   .info-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; align-items: stretch; }
+  .options { padding: 4.5rem 3rem; background: var(--paper); }
+  .options-inner { max-width: 1100px; margin: 0 auto; }
+  .options-header { text-align: center; margin-bottom: 2.5rem; }
+  .options-header h2 { font-family: 'Fraunces', serif; font-size: clamp(1.9rem, 3vw, 2.7rem); font-weight: 700; letter-spacing: -0.02em; margin-bottom: 0.6rem; }
+  .options-header p { color: var(--muted); font-size: 1rem; }
+  .options-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; align-items: stretch; }
+  .option-card { background: white; border: 1px solid var(--border); border-radius: 4px; padding: 2rem 1.8rem; display: flex; flex-direction: column; }
+  .option-card h3 { font-family: 'Fraunces', serif; font-size: 1.25rem; font-weight: 700; margin: 0.9rem 0 0.7rem; letter-spacing: -0.01em; }
+  .option-card p { font-size: 0.92rem; color: #3a5260; line-height: 1.7; }
+  .option-tag { align-self: flex-start; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--sage); background: #e8f0e6; padding: 0.2rem 0.6rem; border-radius: 2px; }
+  .option-card p.option-price { margin-top: 0.9rem; padding: 0.7rem 0.9rem; background: var(--warm); border-left: 3px solid var(--accent); font-size: 0.86rem; font-weight: 600; color: var(--ink); line-height: 1.5; }
+  .option-foot { margin-top: auto; padding-top: 1.2rem; font-size: 0.82rem !important; color: var(--muted) !important; font-style: italic; }
+  .option-card.featured { background: var(--ink); border-color: var(--ink); }
+  .option-card.featured h3, .option-card.featured p { color: white; }
+  .option-card.featured .option-foot { color: #c9d5db !important; }
+  .option-card.featured .option-tag { background: var(--accent); color: var(--ink); }
+  .options-note { text-align: center; max-width: 640px; margin: 2rem auto 0; color: #3a5260; font-size: 0.98rem; }
+  .service-group { grid-column: 1 / -1; margin-top: 0.8rem; }
+  .service-group:first-child { margin-top: 0; }
+  .service-group h3 { font-family: 'Fraunces', serif; font-size: 1.45rem; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 0.2rem; }
+  .service-group p { color: var(--muted); font-size: 0.95rem; }
+  .not-sure { margin-top: 2rem; background: white; border: 1px dashed var(--border); border-radius: 4px; padding: 1.8rem 2.2rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
+  .not-sure h3 { font-family: 'Fraunces', serif; font-size: 1.2rem; font-weight: 700; margin-bottom: 0.3rem; }
+  .not-sure p { color: var(--muted); font-size: 0.92rem; max-width: 600px; }
   @media (max-width: 900px) {
     nav { padding: 1rem 1.5rem; }
     .hero { padding: 5.5rem 1.5rem 2.5rem; }
@@ -126,15 +147,15 @@
     .hero-card { display: none; }
     .problem-inner { grid-template-columns: 1fr; gap: 2.5rem; }
     .services-grid { grid-template-columns: 1fr; }
-    .diff-inner { grid-template-columns: 1fr; gap: 2rem; }
-    .diff-points { grid-template-columns: 1fr; }
-      .explainer, .problem, .services, .diff, .process, .cta-section { padding: 4rem 1.5rem; }
+          .explainer, .options, .problem, .services, .process, .cta-section { padding: 4rem 1.5rem; }
     footer { flex-direction: column; gap: 0.5rem; text-align: center; }
     .jump-bar { padding: 0.7rem 1rem !important; top: 58px !important; }
     .about-sec, .pricing-sec { padding: 2.5rem 1.5rem !important; }
     .about-grid { grid-template-columns: 1fr !important; gap: 1.5rem !important; justify-items: start; }
     .site-footer { padding: 2.5rem 1.5rem !important; }
     .more-cards { grid-template-columns: 1fr; }
+    .options-grid { grid-template-columns: 1fr; }
+    .not-sure { padding: 1.5rem; }
     .rate-grid, .info-grid { grid-template-columns: 1fr; }
     .pricing-sec div[style*="grid-template-columns: 1fr auto"] { grid-template-columns: 1fr !important; padding: 1.5rem !important; }
     .pricing-sec div[style*="grid-template-columns: 1fr auto"] > div:last-child { text-align: left !important; }
@@ -164,30 +185,31 @@
 <section class="hero">
   <div class="hero-inner">
     <div>
-      <p class="hero-eyebrow">For teams that want to work smarter</p>
-      <h1>Your team could be working <em>smarter.</em> I'll show them how.</h1>
-      <p class="hero-lead">AI tools are already sitting inside your Microsoft account — most teams just don't know how to use them. I work with teams to unlock what's already there, in plain language, with no tech background required.</p>
+      <p class="hero-eyebrow">AI upskilling for businesses using free Copilot Chat</p>
+      <h1>Get your whole team confidently using AI — with the <em>free Copilot Chat</em> you already have.</h1>
+      <p class="hero-lead">I help businesses without big AI budgets upskill their people and set up practical tools and systems inside Copilot Chat — the free version of Microsoft Copilot. No premium licences. No six-figure custom builds. No tech background needed.</p>
       <div class="hero-actions">
         <a href="#services" class="btn-primary">See what I offer</a>
+        <a href="mailto:workplaceaicoaching@gmail.com" class="btn-secondary">Book a free 15-minute call</a>
       </div>
     </div>
     <div class="hero-card">
-      <p class="hero-card-label">What teams have achieved</p>
+      <p class="hero-card-label">What you get</p>
       <div class="hero-card-item">
-        <div class="hero-card-icon">📋</div>
-        <div class="hero-card-text"><strong>Hiring made faster</strong><span>A step-by-step AI tool that anyone can use to shortlist candidates</span></div>
+        <div class="hero-card-icon">🎓</div>
+        <div class="hero-card-text"><strong>An upskilled, confident workforce</strong><span>Practical training built around the work your people actually do</span></div>
       </div>
       <div class="hero-card-item">
-        <div class="hero-card-icon">🎯</div>
-        <div class="hero-card-text"><strong>Team strategy sessions</strong><span>AI-assisted workshops for planning, culture and problem solving</span></div>
-      </div>
-      <div class="hero-card-item">
-        <div class="hero-card-icon">⚡</div>
-        <div class="hero-card-text"><strong>Time saved, every week</strong><span>Individual coaching to find quick wins in day-to-day work</span></div>
+        <div class="hero-card-icon">🛠️</div>
+        <div class="hero-card-text"><strong>Tools and systems that are ready to use</strong><span>Step-by-step tools for hiring, reporting, onboarding, planning and more</span></div>
       </div>
       <div class="hero-card-item">
         <div class="hero-card-icon">🆓</div>
-        <div class="hero-card-text"><strong>No extra software needed</strong><span>Everything works with the free Copilot your team already has</span></div>
+        <div class="hero-card-text"><strong>All inside free Copilot Chat</strong><span>No premium licences, no new software, no ongoing fees</span></div>
+      </div>
+      <div class="hero-card-item">
+        <div class="hero-card-icon">🔑</div>
+        <div class="hero-card-text"><strong>Yours to keep and run</strong><span>Your team can use, adapt and build more themselves — without needing me</span></div>
       </div>
     </div>
   </div>
@@ -198,8 +220,8 @@
   <div style="max-width: 1100px; margin: 0 auto; display: flex; gap: 0.6rem; flex-wrap: wrap; align-items: center;">
     <span style="font-size: 0.75rem; color: #a0b5bf; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; margin-right: 0.5rem;">Jump to:</span>
     <a href="#about" style="font-size: 0.82rem; color: white; text-decoration: none; padding: 0.35rem 0.9rem; border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; transition: background 0.2s; white-space: nowrap;" onmouseover="this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.background='transparent'">About Jackie</a>
-    <a href="#services" style="font-size: 0.82rem; color: white; text-decoration: none; padding: 0.35rem 0.9rem; border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; transition: background 0.2s; white-space: nowrap;" onmouseover="this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.background='transparent'">Services</a>
-    <a href="#different" style="font-size: 0.82rem; color: white; text-decoration: none; padding: 0.35rem 0.9rem; border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; transition: background 0.2s; white-space: nowrap;" onmouseover="this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.background='transparent'">Where I'm Different</a>
+    <a href="#copilot" style="font-size: 0.82rem; color: white; text-decoration: none; padding: 0.35rem 0.9rem; border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; transition: background 0.2s; white-space: nowrap;" onmouseover="this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.background='transparent'">Free Copilot Chat</a>
+    <a href="#services" style="font-size: 0.82rem; color: white; text-decoration: none; padding: 0.35rem 0.9rem; border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; transition: background 0.2s; white-space: nowrap;" onmouseover="this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.background='transparent'">What I Offer</a>
     <a href="#pricing" style="font-size: 0.82rem; color: white; text-decoration: none; padding: 0.35rem 0.9rem; border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; transition: background 0.2s; white-space: nowrap;" onmouseover="this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.background='transparent'">Pricing</a>
     <a href="#contact" style="font-size: 0.82rem; color: white; text-decoration: none; padding: 0.35rem 0.9rem; border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; transition: background 0.2s; white-space: nowrap;" onmouseover="this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.background='transparent'">Get in Touch</a>
   </div>
@@ -217,12 +239,47 @@
   </div>
 </section>
 
-<section class="explainer">
+<section class="explainer" id="copilot">
   <div class="explainer-inner">
-    <h2>"What even is Copilot?"</h2>
-    <p>Copilot is Microsoft's built-in AI assistant. Think of it as a knowledgeable colleague you can type a request to — it helps you draft documents, summarise information, create plans, research topics, prepare for meetings, and much more.</p>
-    <p>The good news? If your organisation uses Microsoft 365, you most likely already have access to a <span class="explainer-highlight">free version of Copilot</span> right now. You just might not know it's there — or how to make it work for you.</p>
-    <div class="no-jargon"><p><strong>No jargon. No tech background needed.</strong> My job is to make this immediately useful for your team — not to overwhelm you with buzzwords about artificial intelligence.</p></div>
+    <h2>"What even is Copilot Chat?"</h2>
+    <p>Copilot Chat is Microsoft's free AI assistant. Think of it as a knowledgeable colleague you can type a request to — it helps you draft documents, summarise information, create plans, research topics, prepare for meetings, and much more.</p>
+    <p>If your organisation uses Microsoft 365, your team can most likely use it right now, at no extra cost — that's the <span class="explainer-highlight">free version of Copilot</span>. Most people just haven't been shown how to make it work for their actual job.</p>
+    <div class="no-jargon">
+      <p style="margin-bottom: 1rem;"><strong>There's also a paid, premium version of Copilot.</strong> It's a capable product, but it's a cost for every person — so many organisations can't justify it for everyone. <strong>My work is built entirely around the free version,</strong> so your whole workforce can benefit, whatever your budget.</p>
+      <p><strong>No jargon. No tech background needed.</strong> My job is to make this immediately useful for your team — not to overwhelm you with buzzwords about artificial intelligence.</p>
+    </div>
+  </div>
+</section>
+
+<section class="options" id="options">
+  <div class="options-inner">
+    <div class="options-header">
+      <p class="section-label">Your options</p>
+      <h2>Three ways businesses approach AI</h2>
+      <p>Here's the landscape — and where I fit.</p>
+    </div>
+    <div class="options-grid">
+      <div class="option-card">
+        <span class="option-tag">Big-budget builds</span>
+        <h3>Custom bots and agents</h3>
+        <p>Consultancies design and build bespoke AI solutions for your business. Powerful, but these projects can run to hundreds of thousands of dollars — often with ongoing fees to keep them running.</p>
+        <p class="option-foot">Best for: large organisations with large budgets</p>
+      </div>
+      <div class="option-card">
+        <span class="option-tag">Per-user licences</span>
+        <h3>Premium Copilot licences</h3>
+        <p>A paid add-on that connects Copilot to your files and apps. Valuable if you can afford it — but it's a cost for every person, so many businesses only licence some of their staff, or none at all.</p>
+        <p class="option-price">From about AU$540 per person per year — roughly AU$27,000 a year for 50 staff.</p>
+        <p class="option-foot">Best for: organisations able to licence their whole workforce</p>
+      </div>
+      <div class="option-card featured">
+        <span class="option-tag">Where I work</span>
+        <h3>Free Copilot Chat, set up properly</h3>
+        <p>Your team already has access. I upskill your people and build the tools and systems inside it, around your real processes. The only cost is my time — no licences, no build fees, no ongoing costs.</p>
+        <p class="option-foot">Best for: businesses that want real results without the big spend</p>
+      </div>
+    </div>
+    <p class="options-note">If the first two suit your budget, great. If they don't, you can still get real, practical value from AI — and that's exactly what I'm here for.</p>
   </div>
 </section>
 
@@ -231,14 +288,11 @@
     <div>
       <p class="section-label">Sound familiar?</p>
       <h2>Most teams have the tools. They just don't know what to do with them.</h2>
-      <p>Teams across all kinds of organisations are sitting on AI tools they're not using — or using badly. It's not a lack of intelligence or willingness. It's that nobody has taken the time to show people how these tools apply to <em>their</em> actual work.</p>
-      <p>LinkedIn Learning videos and generic online courses don't cut it. What your team needs is someone who'll sit with them, understand what they actually do each day, and help them get real value — fast.</p>
     </div>
-    <ul class="pain-list">
-      <li><span class="x">✗</span> "We've done AI training before — people sat through it and went straight back to doing things the same way"</li>
-      <li><span class="x">✗</span> "We don't have the budget for premium AI licences — and not everyone gets access anyway"</li>
-      <li><span class="x">✗</span> "Our team wants to use AI but nobody knows where to start or what's actually allowed"</li>
-      <li><span class="x">✗</span> "Leadership wants us using AI — but we haven't had any real support to make that happen"</li>
+    <ul class="tick-list dot-list problem-points">
+      <li>Teams already have access to Copilot Chat — but they're not using it, or they're not using it optimally.</li>
+      <li>It's not a lack of intelligence or willingness. It's that nobody has taken the time to show people how it applies to <em>their</em> actual work.</li>
+      <li>LinkedIn Learning videos and generic online courses don't cut it. They need someone who'll sit with them and understand what they're doing, so they can get real value from AI, fast.</li>
     </ul>
   </div>
 </section>
@@ -247,89 +301,61 @@
   <div class="services-inner">
     <div class="services-header">
       <p class="section-label">What I offer</p>
-      <h2>Five ways I can help your team</h2>
-      <p>Every engagement is hands-on, practical, and tailored to what your team actually does.</p>
+      <h2>Upskill your people. Set up your tools.</h2>
+      <p>Everything I do runs on free Copilot Chat, and everything is built around what your team actually does.</p>
     </div>
     <div class="services-grid">
+      <div class="service-group">
+        <h3>Upskill your workforce</h3>
+        <p>Get your people confident using Copilot Chat on the real work they do every day.</p>
+      </div>
       <div class="service-card">
         <div class="service-num">01</div>
+        <h3>Practical Training Workshops</h3>
+        <p>Hands-on group training on topics like building a business case, writing effective AI prompts, or getting started with Copilot Chat. Participants learn the theory, then apply it to something real during the session. They leave with a working tool they can use the next day.</p>
+        <span class="service-tag">Groups</span>
+      </div>
+      <div class="service-card">
+        <div class="service-num">02</div>
         <h3>One-on-one Role Sessions</h3>
         <p>I spend time with individual team members to understand their day-to-day work. Together we find the tasks that are taking too long, too much effort, or too much mental load — and fix them. AI is part of the solution, but not always, sometimes it's just a better way of doing things.</p>
         <span class="service-tag">Individual</span>
       </div>
       <div class="service-card">
-        <div class="service-num">02</div>
+        <div class="service-num">03</div>
+        <h3>Leader Coaching</h3>
+        <p>Designed for managers and leaders who want to start using AI in their own work and lead their teams to do the same. I work with you directly to build confidence and practical skills, at a pace that suits you. No judgment if you've never used it before.</p>
+        <span class="service-tag">Leaders</span>
+      </div>
+      <div class="service-group">
+        <h3>Set up your tools and ways of working</h3>
+        <p>Build the prompts, tools and systems inside Copilot Chat that make good practice repeatable for everyone.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">04</div>
         <h3>Custom AI Tools for Your Processes</h3>
         <p>I build step-by-step AI tools tailored to your specific processes — hiring, reporting, onboarding, business cases, and more. Your organisation's own policies and requirements are built in. Anyone on the team can use them, even with zero experience.</p>
         <span class="service-tag">Team-wide</span>
       </div>
       <div class="service-card">
-        <div class="service-num">03</div>
+        <div class="service-num">05</div>
         <h3>Facilitated Team Workshops</h3>
         <p>I design and run AI-assisted team sessions for strategy planning, culture work, problem solving, or team values. I can facilitate the sessions myself, or set you up with everything you need to run them yourself. The tools and materials are yours to keep.</p>
         <span class="service-tag">Leaders & teams</span>
       </div>
       <div class="service-card">
-        <div class="service-num">04</div>
-        <h3>Practical Training Workshops</h3>
-        <p>Hands-on group training on topics like building a business case, writing effective AI prompts, or getting started with Copilot. Participants learn the theory, then apply it to something real during the session. They leave with a working tool they can use the next day.</p>
-        <span class="service-tag">Groups</span>
-      </div>
-      <div class="service-card">
-        <div class="service-num">05</div>
-        <h3>Leader Coaching</h3>
-        <p>Designed for managers and leaders who want to start using AI in their own work and lead their teams to do the same. I work with you directly to build confidence and practical skills, at a pace that suits you. No judgment if you've never used it before.</p>
-        <span class="service-tag">Leaders</span>
-      </div>
-      <div class="service-card" style="background: white; border-style: dashed;">
-        <div class="service-num" style="color: var(--accent);">?</div>
-        <h3>Not sure what you need?</h3>
-        <p>That's fine — most people aren't when they first reach out. Get in touch and we'll have a conversation about what's happening in your team and what might actually help. No obligation.</p>
-        <a href="mailto:workplaceaicoaching@gmail.com" class="btn-primary" style="display:inline-block; margin-top:0.5rem; font-size:0.85rem; padding:0.6rem 1.2rem;">Let's talk</a>
+        <div class="service-num">06</div>
+        <h3>Process &amp; Operational Improvement</h3>
+        <p>Improvement is my trade. I look at how work flows through your team, find where time and effort are being lost, and fix it — with AI where it helps, and with simple, practical changes where it doesn't.</p>
+        <span class="service-tag">Teams &amp; leaders</span>
       </div>
     </div>
-  </div>
-</section>
-
-<section class="diff" id="different">
-  <div class="diff-inner">
-    <h2>What sets my approach apart</h2>
-    <p style="opacity: 0.85; margin-bottom: 2rem; font-size: 1rem;">There's no shortage of AI training out there. Here's how what I do is different.</p>
-    <div style="overflow-x: auto; width: 100%;">
-      <table style="width: 100%; border-collapse: collapse; font-size: 0.95rem; table-layout: fixed;">
-        <thead>
-          <tr>
-            <th style="width: 50%; text-align: left; padding: 1rem 1.5rem; background: rgba(255,255,255,0.1); border-bottom: 2px solid rgba(255,255,255,0.2); font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600;">Others</th>
-            <th style="width: 50%; text-align: left; padding: 1rem 1.5rem; background: rgba(255,255,255,0.2); border-bottom: 2px solid rgba(255,255,255,0.4); font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600;">Jackie</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td style="padding: 1.2rem 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.1); opacity: 0.8; vertical-align: top;">Teach you how to use Copilot as a tool</td>
-            <td style="padding: 1.2rem 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.08); vertical-align: top; font-weight: 500;">Train on the real processes your team already has to do — hiring, onboarding, reporting, planning, business cases and more. Each session is built around a specific task, and everyone leaves with a working prompt they can use in their job the very next day</td>
-          </tr>
-          <tr>
-            <td style="padding: 1.2rem 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.1); opacity: 0.8; vertical-align: top;">Run the same course for every team</td>
-            <td style="padding: 1.2rem 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.08); vertical-align: top; font-weight: 500;">Design every engagement around what your team actually needs — the topics, the processes, the challenges that matter to you right now</td>
-          </tr>
-          <tr>
-            <td style="padding: 1.2rem 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.1); opacity: 0.8; vertical-align: top;">Require expensive paid Copilot licences</td>
-            <td style="padding: 1.2rem 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.08); vertical-align: top; font-weight: 500;">Work exclusively with the free version of Copilot your team already has — no extra spend required</td>
-          </tr>
-          <tr>
-            <td style="padding: 1.2rem 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.1); opacity: 0.8; vertical-align: top;">Charge hundreds of thousands to build custom tools — then bill ongoing fees to keep them running</td>
-            <td style="padding: 1.2rem 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.08); vertical-align: top; font-weight: 500;">Build the tools with your team, not just for them. The tools run inside Copilot Chat — which is free — so there are no ongoing costs, no licences, and no need to call anyone when something needs updating</td>
-          </tr>
-          <tr>
-            <td style="padding: 1.2rem 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.1); opacity: 0.8; vertical-align: top;">Deliver one type of service — then move on</td>
-            <td style="padding: 1.2rem 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.08); vertical-align: top; font-weight: 500;">Bring a broad skill set across tool building, training, facilitation, strategy, and operational improvement — one person who can work across all of it, whatever your team needs most</td>
-          </tr>
-          <tr>
-            <td style="padding: 1.2rem 1.5rem; opacity: 0.8; vertical-align: top;">Build solutions that depend on an expert to maintain or a consultant to keep returning</td>
-            <td style="padding: 1.2rem 1.5rem; background: rgba(255,255,255,0.08); vertical-align: top; font-weight: 500;">Set your team up to run everything themselves — so when I walk away, they don't need me anymore. That's the goal from day one</td>
-          </tr>
-        </tbody>
-      </table>
+    <div class="not-sure">
+      <div>
+        <h3>Not sure what you need?</h3>
+        <p>That's fine — most people aren't when they first reach out. Book a free 15-minute call and we'll talk through what's happening in your team and what might actually help. No obligation.</p>
+      </div>
+      <a href="mailto:workplaceaicoaching@gmail.com" class="btn-primary">Let's talk</a>
     </div>
   </div>
 </section>
@@ -368,7 +394,7 @@
     <div style="text-align: center; margin-bottom: 2rem;">
       <p class="section-label">Pricing</p>
       <h2 style="font-family: 'Fraunces', serif; font-size: clamp(1.9rem, 3vw, 2.7rem); font-weight: 700; letter-spacing: -0.02em; margin-bottom: 0.8rem;">Simple, transparent rates</h2>
-      <p style="color: var(--muted); max-width: 560px; margin: 0 auto;">No hidden costs, no complicated packages. Here's what you can expect.</p>
+      <p style="color: var(--muted); max-width: 560px; margin: 0 auto;">You pay for my time — that's it. No licences, no build fees, no ongoing costs.</p>
     </div>
     <div class="rate-grid">
       <div class="rate-card" style="background: white; border: 1px solid var(--border); border-radius: 4px; padding: 2rem 2.5rem; display: grid; grid-template-columns: 1fr auto; align-items: start; gap: 1.5rem;">
